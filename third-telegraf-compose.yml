@@ -1,0 +1,13 @@
+version: "3.8"
+    
+services:
+  telegraf2:
+    image: telegraf:1.28.2
+    container_name: telegraf3
+    hostname: telegraf3
+    volumes:
+      - ./telegraf/telegraf3.conf:/etc/telegraf/telegraf.conf:rw
+    env_file:
+      - .env
+    ports:
+      - 8094:8094
